@@ -1,0 +1,599 @@
+{
+  "entries": [
+    {
+      "id": "ollama:qwen2.5:7b",
+      "name": "Qwen 2.5 7B",
+      "category": "llm",
+      "version": "2.5",
+      "source": "ollama",
+      "ramGB": 4.7,
+      "diskGB": 5,
+      "qualityScore": 92,
+      "installCmd": "ollama pull qwen2.5:7b",
+      "lastChecked": "2026-09-13T18:06:23.476Z",
+      "description": "Top 7B model. Multilingual, strong coding and reasoning.",
+      "tags": [
+        "chat",
+        "coding",
+        "multilingual"
+      ],
+      "trending": true,
+      "isNew": false,
+      "url": "https://ollama.com/library/qwen2.5"
+    },
+    {
+      "id": "ollama:gemma3:4b",
+      "name": "Gemma 3 4B",
+      "category": "llm",
+      "version": "3",
+      "source": "ollama",
+      "ramGB": 3.1,
+      "diskGB": 3.3,
+      "qualityScore": 88,
+      "installCmd": "ollama pull gemma3:4b",
+      "lastChecked": "2026-09-13T18:06:23.485Z",
+      "description": "Google's Gemma 3 — fast, high quality for 8GB laptops.",
+      "tags": [
+        "chat",
+        "fast",
+        "google"
+      ],
+      "trending": true,
+      "isNew": true,
+      "url": "https://ollama.com/library/gemma3"
+    },
+    {
+      "id": "ollama:phi4-mini:3.8b",
+      "name": "Phi-4 Mini 3.8B",
+      "category": "llm",
+      "version": "4",
+      "source": "ollama",
+      "ramGB": 2.6,
+      "diskGB": 2.5,
+      "qualityScore": 85,
+      "installCmd": "ollama pull phi4-mini:3.8b",
+      "lastChecked": "2026-09-13T18:06:23.485Z",
+      "description": "Microsoft Phi-4 Mini — outstanding reasoning for its size.",
+      "tags": [
+        "reasoning",
+        "math",
+        "microsoft"
+      ],
+      "trending": true,
+      "isNew": true,
+      "url": "https://ollama.com/library/phi4-mini"
+    },
+    {
+      "id": "ollama:qwen2.5-coder:7b",
+      "name": "Qwen 2.5 Coder 7B",
+      "category": "code",
+      "version": "2.5",
+      "source": "ollama",
+      "ramGB": 4.7,
+      "diskGB": 5,
+      "qualityScore": 94,
+      "installCmd": "ollama pull qwen2.5-coder:7b",
+      "lastChecked": "2026-09-13T18:06:23.485Z",
+      "description": "Best local code model for 8GB RAM. Rivals GPT-4 on coding benchmarks.",
+      "tags": [
+        "code",
+        "debug",
+        "typescript"
+      ],
+      "trending": true,
+      "isNew": false,
+      "url": "https://ollama.com/library/qwen2.5-coder"
+    },
+    {
+      "id": "ollama:llava:7b",
+      "name": "LLaVA 7B Vision",
+      "category": "vision",
+      "version": "1.6",
+      "source": "ollama",
+      "ramGB": 4.7,
+      "diskGB": 4.7,
+      "qualityScore": 80,
+      "installCmd": "ollama pull llava:7b",
+      "lastChecked": "2026-09-13T18:06:23.485Z",
+      "description": "Multimodal: understands images + text. Good for visual QA.",
+      "tags": [
+        "vision",
+        "multimodal"
+      ],
+      "trending": false,
+      "isNew": false,
+      "url": "https://ollama.com/library/llava"
+    },
+    {
+      "id": "ollama:nomic-embed-text",
+      "name": "Nomic Embed Text",
+      "category": "embedding",
+      "version": "1.5",
+      "source": "ollama",
+      "ramGB": 0.3,
+      "diskGB": 0.3,
+      "qualityScore": 87,
+      "installCmd": "ollama pull nomic-embed-text",
+      "lastChecked": "2026-09-13T18:06:23.485Z",
+      "description": "Best open embedding model. Required for RAG pipelines.",
+      "tags": [
+        "embeddings",
+        "rag",
+        "semantic"
+      ],
+      "trending": false,
+      "isNew": false,
+      "url": "https://ollama.com/library/nomic-embed-text"
+    },
+    {
+      "id": "ollama:deepseek-r1:7b",
+      "name": "DeepSeek R1 7B",
+      "category": "llm",
+      "version": "1",
+      "source": "ollama",
+      "ramGB": 4.9,
+      "diskGB": 5,
+      "qualityScore": 91,
+      "installCmd": "ollama pull deepseek-r1:7b",
+      "lastChecked": "2026-09-13T18:06:23.485Z",
+      "description": "Chain-of-thought reasoning model. Exceptional for math and logic.",
+      "tags": [
+        "reasoning",
+        "math",
+        "chain-of-thought"
+      ],
+      "trending": true,
+      "isNew": true,
+      "url": "https://ollama.com/library/deepseek-r1"
+    },
+    {
+      "id": "hf:microsoft/phi-4",
+      "name": "Phi-4 (HuggingFace)",
+      "category": "llm",
+      "version": "4",
+      "source": "huggingface",
+      "ramGB": 9,
+      "diskGB": 9,
+      "qualityScore": 93,
+      "installCmd": "huggingface-cli download microsoft/phi-4",
+      "lastChecked": "2026-09-13T18:06:25.600Z",
+      "description": "Full Phi-4 model on HF. Requires 16GB+ for full quality.",
+      "tags": [
+        "microsoft",
+        "reasoning"
+      ],
+      "trending": true,
+      "isNew": true,
+      "url": "https://huggingface.co/microsoft/phi-4"
+    },
+    {
+      "id": "hf:Qwen/Qwen2.5-7B",
+      "name": "Qwen2.5-7B (HuggingFace)",
+      "category": "llm",
+      "version": "2.5",
+      "source": "huggingface",
+      "ramGB": 7,
+      "diskGB": 7,
+      "qualityScore": 90,
+      "installCmd": "huggingface-cli download Qwen/Qwen2.5-7B",
+      "lastChecked": "2026-09-13T18:06:25.600Z",
+      "description": "Raw HF weights. Use via Ollama for easier install.",
+      "tags": [
+        "qwen",
+        "alibaba"
+      ],
+      "trending": true,
+      "isNew": false,
+      "url": "https://huggingface.co/Qwen/Qwen2.5-7B"
+    },
+    {
+      "id": "hf:stabilityai/stable-diffusion-xl",
+      "name": "SDXL",
+      "category": "vision",
+      "version": "xl",
+      "source": "huggingface",
+      "ramGB": 6,
+      "diskGB": 6,
+      "qualityScore": 88,
+      "installCmd": "huggingface-cli download stabilityai/stable-diffusion-xl-base-1.0",
+      "lastChecked": "2026-09-13T18:06:25.601Z",
+      "description": "Stable Diffusion XL — state of the art image generation.",
+      "tags": [
+        "image",
+        "generation",
+        "art"
+      ],
+      "trending": false,
+      "isNew": false,
+      "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
+    },
+    {
+      "id": "github:ollama/ollama",
+      "name": "Ollama",
+      "category": "tool",
+      "version": "latest",
+      "source": "github",
+      "ramGB": null,
+      "diskGB": null,
+      "qualityScore": 95,
+      "installCmd": "winget install Ollama.Ollama",
+      "lastChecked": "2026-09-13T18:06:25.601Z",
+      "description": "Run LLMs locally. The backbone of Empire OS AI routing.",
+      "tags": [
+        "runtime",
+        "local",
+        "llm"
+      ],
+      "trending": true,
+      "isNew": false,
+      "url": "https://github.com/ollama/ollama",
+      "stars": 95000
+    },
+    {
+      "id": "github:comfyanonymous/ComfyUI",
+      "name": "ComfyUI",
+      "category": "tool",
+      "version": "latest",
+      "source": "github",
+      "ramGB": null,
+      "diskGB": null,
+      "qualityScore": 90,
+      "installCmd": "git clone https://github.com/comfyanonymous/ComfyUI",
+      "lastChecked": "2026-09-13T18:06:25.601Z",
+      "description": "Node-based Stable Diffusion UI. Local image generation.",
+      "tags": [
+        "image",
+        "stable-diffusion",
+        "nodes"
+      ],
+      "trending": true,
+      "isNew": false,
+      "url": "https://github.com/comfyanonymous/ComfyUI",
+      "stars": 55000
+    },
+    {
+      "id": "github:open-webui/open-webui",
+      "name": "Open WebUI",
+      "category": "tool",
+      "version": "latest",
+      "source": "github",
+      "ramGB": null,
+      "diskGB": null,
+      "qualityScore": 88,
+      "installCmd": "docker run -p 3000:8080 ghcr.io/open-webui/open-webui",
+      "lastChecked": "2026-09-13T18:06:25.601Z",
+      "description": "Beautiful local web UI for Ollama. Chat with your models.",
+      "tags": [
+        "ui",
+        "chat",
+        "docker"
+      ],
+      "trending": true,
+      "isNew": false,
+      "url": "https://github.com/open-webui/open-webui",
+      "stars": 48000
+    },
+    {
+      "id": "github:block/goose",
+      "name": "Goose CLI",
+      "category": "tool",
+      "version": "latest",
+      "source": "github",
+      "ramGB": null,
+      "diskGB": null,
+      "qualityScore": 87,
+      "installCmd": "curl -fsSL https://github.com/block/goose/releases/latest/download/install.sh | sh",
+      "lastChecked": "2026-09-13T18:06:25.601Z",
+      "description": "Agentic AI dev tool by Block. Runs tasks in your shell.",
+      "tags": [
+        "agent",
+        "cli",
+        "coding"
+      ],
+      "trending": true,
+      "isNew": true,
+      "url": "https://github.com/block/goose",
+      "stars": 12000
+    },
+    {
+      "id": "mcp:filesystem",
+      "name": "MCP Filesystem",
+      "category": "mcp",
+      "version": "1.0",
+      "source": "mcp-registry",
+      "ramGB": null,
+      "diskGB": null,
+      "qualityScore": 80,
+      "installCmd": "npx -y @modelcontextprotocol/server-filesystem",
+      "lastChecked": "2026-09-13T18:06:25.601Z",
+      "description": "Read/write local files via MCP. Essential for file-based workflows.",
+      "tags": [
+        "mcp",
+        "filesystem",
+        "files"
+      ],
+      "trending": false,
+      "isNew": false,
+      "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    {
+      "id": "mcp:brave-search",
+      "name": "MCP Brave Search",
+      "category": "mcp",
+      "version": "1.0",
+      "source": "mcp-registry",
+      "ramGB": null,
+      "diskGB": null,
+      "qualityScore": 78,
+      "installCmd": "npx -y @modelcontextprotocol/server-brave-search",
+      "lastChecked": "2026-09-13T18:06:25.601Z",
+      "description": "Web search via Brave API. Gives Claude current information.",
+      "tags": [
+        "mcp",
+        "search",
+        "web"
+      ],
+      "trending": true,
+      "isNew": false,
+      "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    {
+      "id": "mcp:github",
+      "name": "MCP GitHub",
+      "category": "mcp",
+      "version": "1.0",
+      "source": "mcp-registry",
+      "ramGB": null,
+      "diskGB": null,
+      "qualityScore": 82,
+      "installCmd": "npx -y @modelcontextprotocol/server-github",
+      "lastChecked": "2026-09-13T18:06:25.601Z",
+      "description": "GitHub API via MCP. Create PRs, read repos, search code.",
+      "tags": [
+        "mcp",
+        "github",
+        "git"
+      ],
+      "trending": true,
+      "isNew": false,
+      "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    {
+      "id": "mcp:puppeteer",
+      "name": "MCP Puppeteer",
+      "category": "mcp",
+      "version": "1.0",
+      "source": "mcp-registry",
+      "ramGB": null,
+      "diskGB": null,
+      "qualityScore": 76,
+      "installCmd": "npx -y @modelcontextprotocol/server-puppeteer",
+      "lastChecked": "2026-09-13T18:06:25.601Z",
+      "description": "Browser automation via MCP. Scrape, test, interact with websites.",
+      "tags": [
+        "mcp",
+        "browser",
+        "automation"
+      ],
+      "trending": false,
+      "isNew": false,
+      "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    {
+      "id": "comfyui:comfyui-manager",
+      "name": "ComfyUI Manager",
+      "category": "comfyui",
+      "version": "latest",
+      "source": "comfyui",
+      "ramGB": null,
+      "diskGB": null,
+      "qualityScore": 90,
+      "installCmd": "git clone https://github.com/ltdrdata/ComfyUI-Manager custom_nodes/ComfyUI-Manager",
+      "lastChecked": "2026-09-13T18:06:25.602Z",
+      "description": "Essential manager node for ComfyUI. Install/update other nodes.",
+      "tags": [
+        "comfyui",
+        "manager",
+        "essential"
+      ],
+      "trending": true,
+      "isNew": false,
+      "url": "https://github.com/ltdrdata/ComfyUI-Manager"
+    },
+    {
+      "id": "comfyui:controlnet",
+      "name": "ControlNet for ComfyUI",
+      "category": "comfyui",
+      "version": "latest",
+      "source": "comfyui",
+      "ramGB": null,
+      "diskGB": null,
+      "qualityScore": 85,
+      "installCmd": "git clone https://github.com/Fannovel16/comfyui_controlnet_aux custom_nodes/controlnet",
+      "lastChecked": "2026-09-13T18:06:25.602Z",
+      "description": "ControlNet preprocessing nodes. Precise control over image generation.",
+      "tags": [
+        "comfyui",
+        "controlnet",
+        "image"
+      ],
+      "trending": false,
+      "isNew": false,
+      "url": "https://github.com/Fannovel16/comfyui_controlnet_aux"
+    },
+    {
+      "id": "comfyui:ipadapter",
+      "name": "IPAdapter ComfyUI",
+      "category": "comfyui",
+      "version": "latest",
+      "source": "comfyui",
+      "ramGB": null,
+      "diskGB": null,
+      "qualityScore": 83,
+      "installCmd": "git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus custom_nodes/ipadapter",
+      "lastChecked": "2026-09-13T18:06:25.602Z",
+      "description": "IP-Adapter for style/face transfer in Stable Diffusion.",
+      "tags": [
+        "comfyui",
+        "style",
+        "face"
+      ],
+      "trending": true,
+      "isNew": false,
+      "url": "https://github.com/cubiq/ComfyUI_IPAdapter_plus"
+    }
+  ],
+  "lastFullScan": "2026-09-13T18:06:25.602Z",
+  "scanLog": [
+    {
+      "source": "ollama",
+      "status": "failed",
+      "count": 7,
+      "timestamp": "2026-09-10T04:16:07.144Z"
+    },
+    {
+      "source": "huggingface",
+      "status": "cached",
+      "count": 3,
+      "timestamp": "2026-09-10T04:16:07.144Z"
+    },
+    {
+      "source": "github",
+      "status": "cached",
+      "count": 4,
+      "timestamp": "2026-09-10T04:16:07.144Z"
+    },
+    {
+      "source": "mcp-registry",
+      "status": "cached",
+      "count": 4,
+      "timestamp": "2026-09-10T04:16:07.144Z"
+    },
+    {
+      "source": "comfyui",
+      "status": "cached",
+      "count": 3,
+      "timestamp": "2026-09-10T04:16:07.144Z"
+    },
+    {
+      "source": "ollama",
+      "status": "failed",
+      "count": 7,
+      "timestamp": "2026-09-12T07:15:47.356Z"
+    },
+    {
+      "source": "huggingface",
+      "status": "cached",
+      "count": 3,
+      "timestamp": "2026-09-12T07:15:47.356Z"
+    },
+    {
+      "source": "github",
+      "status": "cached",
+      "count": 4,
+      "timestamp": "2026-09-12T07:15:47.356Z"
+    },
+    {
+      "source": "mcp-registry",
+      "status": "cached",
+      "count": 4,
+      "timestamp": "2026-09-12T07:15:47.357Z"
+    },
+    {
+      "source": "comfyui",
+      "status": "cached",
+      "count": 3,
+      "timestamp": "2026-09-12T07:15:47.357Z"
+    },
+    {
+      "source": "ollama",
+      "status": "failed",
+      "count": 7,
+      "timestamp": "2026-09-12T13:50:46.670Z"
+    },
+    {
+      "source": "huggingface",
+      "status": "cached",
+      "count": 3,
+      "timestamp": "2026-09-12T13:50:46.671Z"
+    },
+    {
+      "source": "github",
+      "status": "cached",
+      "count": 4,
+      "timestamp": "2026-09-12T13:50:46.671Z"
+    },
+    {
+      "source": "mcp-registry",
+      "status": "cached",
+      "count": 4,
+      "timestamp": "2026-09-12T13:50:46.671Z"
+    },
+    {
+      "source": "comfyui",
+      "status": "cached",
+      "count": 3,
+      "timestamp": "2026-09-12T13:50:46.671Z"
+    },
+    {
+      "source": "ollama",
+      "status": "failed",
+      "count": 7,
+      "timestamp": "2026-09-13T03:39:50.494Z"
+    },
+    {
+      "source": "huggingface",
+      "status": "cached",
+      "count": 3,
+      "timestamp": "2026-09-13T03:39:50.494Z"
+    },
+    {
+      "source": "github",
+      "status": "cached",
+      "count": 4,
+      "timestamp": "2026-09-13T03:39:50.494Z"
+    },
+    {
+      "source": "mcp-registry",
+      "status": "cached",
+      "count": 4,
+      "timestamp": "2026-09-13T03:39:50.494Z"
+    },
+    {
+      "source": "comfyui",
+      "status": "cached",
+      "count": 3,
+      "timestamp": "2026-09-13T03:39:50.495Z"
+    },
+    {
+      "source": "ollama",
+      "status": "failed",
+      "count": 7,
+      "timestamp": "2026-09-13T18:06:25.600Z"
+    },
+    {
+      "source": "huggingface",
+      "status": "cached",
+      "count": 3,
+      "timestamp": "2026-09-13T18:06:25.601Z"
+    },
+    {
+      "source": "github",
+      "status": "cached",
+      "count": 4,
+      "timestamp": "2026-09-13T18:06:25.601Z"
+    },
+    {
+      "source": "mcp-registry",
+      "status": "cached",
+      "count": 4,
+      "timestamp": "2026-09-13T18:06:25.601Z"
+    },
+    {
+      "source": "comfyui",
+      "status": "cached",
+      "count": 3,
+      "timestamp": "2026-09-13T18:06:25.602Z"
+    }
+  ]
+}

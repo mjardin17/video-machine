@@ -1,0 +1,58 @@
+{
+  "global:empire-assistant.boot": {
+    "entry": {
+      "key": "empire-assistant.boot",
+      "value": {
+        "status": "online",
+        "version": "2.0.0",
+        "bootedAt": "2026-07-04T15:05:10.687Z",
+        "channels": [
+          "gods-glory",
+          "machine-learning",
+          "little-olympus"
+        ]
+      },
+      "scope": "global",
+      "moduleId": "empire-assistant",
+      "createdAt": "2026-07-04T15:05:10.687Z",
+      "updatedAt": "2026-07-04T15:05:10.687Z",
+      "tags": [
+        "boot",
+        "status"
+      ]
+    }
+  },
+  "global:empire-assistant-events.agent.action.9876a0fd-ffe4-4dad-bb96-78ef2b957fd9": {
+    "entry": {
+      "key": "empire-assistant-events.agent.action.9876a0fd-ffe4-4dad-bb96-78ef2b957fd9",
+      "value": {
+        "topic": "agent.action",
+        "source": "empire-assistant",
+        "payload": {
+          "action": "module.registered",
+          "moduleId": "empire-assistant",
+          "version": "2.0.0",
+          "capabilities": [
+            "ai-complete",
+            "ai-task",
+            "ai-models",
+            "ai-stats",
+            "agent-chat",
+            "agent-query",
+            "agent-remember"
+          ]
+        },
+        "at": "2026-07-04T15:05:10.689Z"
+      },
+      "scope": "global",
+      "moduleId": "empire-assistant",
+      "createdAt": "2026-07-04T15:05:10.690Z",
+      "updatedAt": "2026-07-04T15:05:10.690Z",
+      "tags": [
+        "event",
+        "agent.action",
+        "empire-assistant"
+      ]
+    }
+  }
+}

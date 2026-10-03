@@ -1,0 +1,44 @@
+{
+  "recommendations": [
+    {
+      "id": "rec-1789013768144-ihmac",
+      "type": "install",
+      "priority": "low",
+      "title": "Try Gemma 3 4B — trending new model",
+      "reason": "Google's Gemma 3 — fast, high quality for 8GB laptops.",
+      "action": "Review → Approve → Run: ollama pull gemma3:4b",
+      "installCmd": "ollama pull gemma3:4b",
+      "targetModelId": "ollama:gemma3:4b",
+      "ramGB": 3.1,
+      "status": "pending",
+      "createdAt": "2026-09-10T04:16:08.144Z"
+    },
+    {
+      "id": "rec-1789013768144-fle8r",
+      "type": "install",
+      "priority": "low",
+      "title": "Try Phi-4 Mini 3.8B — trending new model",
+      "reason": "Microsoft Phi-4 Mini — outstanding reasoning for its size.",
+      "action": "Review → Approve → Run: ollama pull phi4-mini:3.8b",
+      "installCmd": "ollama pull phi4-mini:3.8b",
+      "targetModelId": "ollama:phi4-mini:3.8b",
+      "ramGB": 2.6,
+      "status": "pending",
+      "createdAt": "2026-09-10T04:16:08.144Z"
+    },
+    {
+      "id": "rec-1789013768144-gz7gc",
+      "type": "install",
+      "priority": "low",
+      "title": "Try DeepSeek R1 7B — trending new model",
+      "reason": "Chain-of-thought reasoning model. Exceptional for math and logic.",
+      "action": "Review → Approve → Run: ollama pull deepseek-r1:7b",
+      "installCmd": "ollama pull deepseek-r1:7b",
+      "targetModelId": "ollama:deepseek-r1:7b",
+      "ramGB": 4.9,
+      "status": "pending",
+      "createdAt": "2026-09-10T04:16:08.144Z"
+    }
+  ],
+  "lastAnalysis": "2026-09-13T18:06:26.621Z"
+}

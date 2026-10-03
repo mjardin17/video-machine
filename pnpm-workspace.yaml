@@ -1,0 +1,15 @@
+packages:
+  - 'packages/*'
+  - 'apps/*'
+  - 'apps/crosspost-enterprise/empire-module'
+  - 'apps/storyforge/empire-module'
+  - 'apps/video-pipeline/empire-module'
+allowBuilds:
+  '@google/genai': true
+  '@prisma/client': true
+  '@prisma/engines': true
+  electron: true
+  esbuild: true
+  prisma: true
+  protobufjs: true
+  unrs-resolver: true

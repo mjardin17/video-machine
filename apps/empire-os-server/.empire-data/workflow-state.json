@@ -1,0 +1,235 @@
+{
+  "definitions": [
+    {
+      "id": "story-to-render",
+      "name": "Story → Render → Publish Pipeline",
+      "version": "2.0.0",
+      "description": "Full StoryForge pipeline (Phases 1-5): premise analysis → characters → world → council review → image generation → EPUB export → format packages → campaign → publish approval.",
+      "initialStep": "science-analyze",
+      "tags": [
+        "storyforge",
+        "creative",
+        "publishing",
+        "automation"
+      ],
+      "triggers": [
+        {
+          "type": "api",
+          "inputSchema": {
+            "type": "object",
+            "required": [
+              "projectId",
+              "manuscriptText"
+            ],
+            "properties": {
+              "projectId": {
+                "type": "string"
+              },
+              "manuscriptText": {
+                "type": "string"
+              },
+              "author": {
+                "type": "string"
+              },
+              "worldName": {
+                "type": "string"
+              },
+              "targetPlatforms": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "kdp",
+                    "etsy",
+                    "shopify",
+                    "gumroad",
+                    "payhip"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "manual"
+        }
+      ],
+      "steps": [
+        {
+          "id": "science-analyze",
+          "type": "action",
+          "name": "Analyze Manuscript",
+          "description": "Readability, emotion, conflict, pacing, plot-hole detection",
+          "moduleId": "storyforge",
+          "action": "POST /science/analyze",
+          "inputMapping": {
+            "text": "manuscriptText"
+          },
+          "outputMapping": {
+            "readability": "analysis.readability",
+            "emotion": "analysis.emotion",
+            "plotHoleFlags": "analysis.plotHoleFlags"
+          },
+          "onSuccess": "create-characters",
+          "timeoutMs": 30000
+        },
+        {
+          "id": "create-characters",
+          "type": "action",
+          "name": "Build Character Matrix",
+          "description": "Create SQLite-backed characters with guarded attributes",
+          "moduleId": "storyforge",
+          "action": "POST /characters",
+          "inputMapping": {
+            "project_id": "projectId"
+          },
+          "outputMapping": {
+            "id": "characterId"
+          },
+          "onSuccess": "build-world",
+          "timeoutMs": 15000
+        },
+        {
+          "id": "build-world",
+          "type": "action",
+          "name": "Build World Memory",
+          "description": "Persistent world with locations, timeline, lore — EmpireMemorySync active",
+          "moduleId": "storyforge",
+          "action": "POST /worlds",
+          "inputMapping": {
+            "project_id": "projectId",
+            "name": "worldName"
+          },
+          "outputMapping": {
+            "id": "worldId"
+          },
+          "onSuccess": "council-review",
+          "timeoutMs": 15000
+        },
+        {
+          "id": "council-review",
+          "type": "action",
+          "name": "Creative Council Review",
+          "description": "14 specialists (Story Architect, Character Designer, Continuity Inspector, etc.)",
+          "moduleId": "storyforge",
+          "action": "POST /council/review",
+          "inputMapping": {
+            "project_context": "manuscriptText"
+          },
+          "outputMapping": {
+            "feedback": "councilFeedback"
+          },
+          "onSuccess": "generate-cover",
+          "timeoutMs": 120000,
+          "retryPolicy": {
+            "maxAttempts": 2,
+            "backoffMs": 5000
+          }
+        },
+        {
+          "id": "generate-cover",
+          "type": "action",
+          "name": "Generate Book Cover",
+          "description": "Cover image via Image Studio — Higgsfield provider (book_cover type)",
+          "moduleId": "storyforge",
+          "action": "POST /images/generate",
+          "inputMapping": {
+            "project_id": "projectId",
+            "image_type": "\"book_cover\"",
+            "provider": "\"higgsfield\""
+          },
+          "outputMapping": {
+            "id": "coverImageId",
+            "output_path": "coverImagePath"
+          },
+          "onSuccess": "export-epub",
+          "onFailure": "export-epub",
+          "timeoutMs": 90000
+        },
+        {
+          "id": "export-epub",
+          "type": "action",
+          "name": "Export EPUB 3",
+          "description": "Generate spec-valid EPUB 3 (stdlib only, no external dep)",
+          "moduleId": "storyforge",
+          "action": "POST /book/export/epub",
+          "inputMapping": {
+            "author": "author"
+          },
+          "outputMapping": {
+            "path": "epubPath"
+          },
+          "onSuccess": "automation-ready",
+          "timeoutMs": 60000
+        },
+        {
+          "id": "automation-ready",
+          "type": "action",
+          "name": "Mark Project Ready",
+          "description": "Signal to Automation Studio — triggers format generation + campaign creation",
+          "moduleId": "storyforge",
+          "action": "POST /automation/projects/{projectId}/ready",
+          "inputMapping": {
+            "book_metadata_id": "bookMetadataId"
+          },
+          "outputMapping": {
+            "status": "automationStatus"
+          },
+          "onSuccess": "generate-formats",
+          "timeoutMs": 10000
+        },
+        {
+          "id": "generate-formats",
+          "type": "action",
+          "name": "Generate Format Packages",
+          "description": "KDP, EPUB, PDF, hardcover, paperback, audiobook, marketing_package",
+          "moduleId": "storyforge",
+          "action": "POST /automation/format-packages/generate-all",
+          "inputMapping": {
+            "project_id": "projectId",
+            "book_metadata_id": "bookMetadataId"
+          },
+          "outputMapping": {
+            "format_packages": "formatPackages"
+          },
+          "onSuccess": "create-campaign",
+          "onFailure": "create-campaign",
+          "timeoutMs": 120000
+        },
+        {
+          "id": "create-campaign",
+          "type": "action",
+          "name": "Create Marketing Campaign",
+          "description": "Campaign across KDP, Etsy, Shopify, Gumroad with scheduled posts",
+          "moduleId": "storyforge",
+          "action": "POST /automation/campaigns",
+          "inputMapping": {
+            "project_id": "projectId",
+            "book_metadata_id": "bookMetadataId",
+            "platforms": "targetPlatforms"
+          },
+          "outputMapping": {
+            "id": "campaignId"
+          },
+          "onSuccess": "approve-publish",
+          "onFailure": "approve-publish",
+          "timeoutMs": 30000
+        },
+        {
+          "id": "approve-publish",
+          "type": "human-approval",
+          "name": "Approve for Publishing",
+          "description": "Josh reviews format packages + campaign before platform export runs",
+          "moduleId": "storyforge",
+          "action": "POST /publishing/approve",
+          "approvers": [
+            "josh"
+          ],
+          "approvalTimeoutMs": 604800000
+        }
+      ]
+    }
+  ],
+  "instances": [],
+  "savedAt": "2026-09-13T18:06:23.586Z"
+}
